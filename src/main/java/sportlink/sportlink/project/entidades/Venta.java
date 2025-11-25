@@ -1,10 +1,21 @@
 package sportlink.sportlink.project.entidades;
 
-import jakarta.persistence.*;
-import lombok.*;
+import java.time.LocalDateTime;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
@@ -19,7 +30,7 @@ public class Venta {
     @Column(name = "VEN_ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_VENTAS")
     @SequenceGenerator(name = "SEQ_VENTAS", sequenceName = "SEQ_VENTAS", allocationSize = 1)
-    private Integer idCliente;
+    private Integer idVenta;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "VENT_FECHA", nullable = false)

@@ -1,15 +1,16 @@
 package sportlink.sportlink.project.servicios;
 
-import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
-import org.springframework.stereotype.Service;
-import sportlink.sportlink.project.dto.VentaDto;
-import sportlink.sportlink.project.entidades.Venta;
-import sportlink.sportlink.project.repositorios.RepositorioVentas;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.stereotype.Service;
+
+import sportlink.sportlink.project.dto.VentaDto;
+import sportlink.sportlink.project.entidades.Venta;
+import sportlink.sportlink.project.repositorios.RepositorioVentas;
 
 @Service
 public class ServicioVenta {
@@ -53,7 +54,7 @@ public class ServicioVenta {
     public VentaDto actualizar(VentaDto ventaDto){
         if(ventaDto.getIdVenta() != null){
 
-            Optional<VentaDto> nuevaVenta = obtenerPorPk(ventaDto.getCantidadVentas());
+            Optional<VentaDto> nuevaVenta = obtenerPorPk(ventaDto.getIdVenta());
 
             if(nuevaVenta.isPresent()) {
 
